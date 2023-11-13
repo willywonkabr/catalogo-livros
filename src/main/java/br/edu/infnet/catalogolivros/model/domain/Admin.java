@@ -5,16 +5,14 @@ import java.time.format.DateTimeFormatter;
 
 public class Admin {
         private String ip;
-
         private String senha;
-
         final private LocalDateTime DATA_CRICAO;
 
         public void criarLivro() {}
         public void editarLivro() {}
         public void deletarLivro() {}
         public void mudarTemaPagina() {}
-        
+
         public Admin(String ip, String senha) {
                 this.ip = ip;
                 this.senha = senha;
@@ -24,7 +22,7 @@ public class Admin {
         public Admin() {
                 this.DATA_CRICAO = LocalDateTime.now();
         }
-        
+
         public String getIp() {
                 return ip;
         }

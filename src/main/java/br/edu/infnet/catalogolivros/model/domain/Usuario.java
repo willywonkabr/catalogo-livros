@@ -3,13 +3,9 @@ package br.edu.infnet.catalogolivros.model.domain;
 import java.util.List;
 
 public class Usuario {
-
         private String nome;
-
         private int idade;
-
         private List<Livro> listaLivrosFavoritos;
-
         public void mudarTemaPagina() {}
 
         public Usuario(String nome, int idade) {
