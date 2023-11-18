@@ -1,0 +1,2 @@
+O Hobbit;J.R.R Tolkien;8578277104;Como a maioria dos hobbits, Bilbo Bolseiro leva uma vida tranquila até o dia em que recebe uma missão do mago Gandalf.;192.168.0.1;senha123
+O Peregrino;John Bunyan;8584840206;Bunyan relata a viagem de Cristão, um peregrino espiritualmente abatido que viaja rumo à Cidade Celestial.;189.156.0.3;adminsenha

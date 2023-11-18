@@ -3,43 +3,47 @@ package br.edu.infnet.catalogolivros.model.domain;
 import java.util.List;
 
 public class Usuario {
-        private String nome;
-        private int idade;
-        private List<Livro> listaLivrosFavoritos;
-        public void mudarTemaPagina() {}
+	private String nome;
+	private int idade;
+	private List<Livro> listaLivrosFavoritos;
 
-        public Usuario(String nome, int idade) {
-                this.nome = nome;
-                this.idade = idade;
-        }
+	public Usuario() {
+	}
 
-        public Usuario() {}
+	public Usuario(String nome, int idade, List<Livro> listaLivrosFavoritos) {
+		this.nome = nome;
+		this.idade = idade;
+		this.listaLivrosFavoritos = listaLivrosFavoritos;
+	}
 
-        public String getNome() {
-                return nome;
-        }
+	public void mudarTemaPagina() {
+	}
 
-        public void setNome(String nome) {
-                this.nome = nome;
-        }
+	public String getNome() {
+		return nome;
+	}
 
-        public int getIdade() {
-                return idade;
-        }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-        public void setIdade(int idade) {
-                this.idade = idade;
-        }
+	public int getIdade() {
+		return idade;
+	}
 
-        public List<Livro> getListaLivrosFavoritos() {
-                return listaLivrosFavoritos;
-        }
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
 
-        public void setListaLivrosFavoritos(List<Livro> listaLivrosFavoritos) {
-                this.listaLivrosFavoritos = listaLivrosFavoritos;
-        }
+	public List<Livro> getListaLivrosFavoritos() {
+		return listaLivrosFavoritos;
+	}
 
-        public String toString() {
-                return String.format("Nome: %s  Idade: %d", getNome(), getIdade());
-        }
+	public void setListaLivrosFavoritos(List<Livro> listaLivrosFavoritos) {
+		this.listaLivrosFavoritos = listaLivrosFavoritos;
+	}
+
+	public String toString() {
+		return String.format("Nome: %s, Idade: %d, Livros Favoritos: %s", getNome(), getIdade(), getListaLivrosFavoritos());
+	}
 }

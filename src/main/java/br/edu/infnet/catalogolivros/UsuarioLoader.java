@@ -1,8 +1,8 @@
 package br.edu.infnet.catalogolivros;
 
-import br.edu.infnet.catalogolivros.model.domain.Admin;
 import br.edu.infnet.catalogolivros.model.domain.Livro;
-import br.edu.infnet.catalogolivros.model.service.AdminService;
+import br.edu.infnet.catalogolivros.model.domain.Usuario;
+import br.edu.infnet.catalogolivros.model.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -13,38 +13,37 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 @Component
-public class AdminLoader implements ApplicationRunner {
+public class UsuarioLoader implements ApplicationRunner {
 
 	@Autowired
-	private AdminService adminService;
+	private UsuarioService usuarioService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		FileReader arquivo = new FileReader("arquivos/admins.txt");
+		FileReader arquivo = new FileReader("arquivos/usuarios.txt");
 		BufferedReader leituraArquivo = new BufferedReader(arquivo);
 
 		String linha = leituraArquivo.readLine();
 
-		String[] adminDados;
+		String[] usuarioDados;
 
 		while (linha != null) {
-			adminDados = linha.split(";");
+			usuarioDados = linha.split(";");
 			System.out.println("[LINHA] " + linha);
 
-			Admin admin = new Admin();
-			admin.setIp(adminDados[0]);
-			admin.setSenha(adminDados[1]);
-			admin.setListaLivrosCriados(new ArrayList<Livro>());
+			Usuario usuario = new Usuario();
+			usuario.setNome(usuarioDados[0]);
+			usuario.setIdade(Integer.valueOf(usuarioDados[1]));
+			usuario.setListaLivrosFavoritos(new ArrayList<Livro>());
 
-			adminService.incluir(admin);
+			usuarioService.incluir(usuario);
 
 			linha = leituraArquivo.readLine();
 		}
 
-		for (Admin admin : adminService.obterListaAdmins()) {
-			System.out.println("[ADMIN] " + admin);
+		for (Usuario usuario : usuarioService.obterListaLivros()) {
+			System.out.println("[USUARIO] " + usuario);
 		}
-
 
 		leituraArquivo.close();
 	}
