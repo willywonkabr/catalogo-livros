@@ -1,12 +1,18 @@
 package br.edu.infnet.catalogolivros.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+@Entity
 public class Admin {
+	@Id
 	private String ip;
 	private String senha;
+	@Transient
 	private List<Livro> listaLivrosCriados;
 	final private LocalDateTime DATA_CRICAO;
 

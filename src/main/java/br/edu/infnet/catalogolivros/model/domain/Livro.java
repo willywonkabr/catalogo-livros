@@ -59,6 +59,6 @@ public class Livro {
 	}
 
 	public String toString() {
-		return String.format("Título: %s Autor: %s, ISBN: %s, Sinopse: %s, Criado por: [ADMIN] %s", getTitulo(), getAutor(), getIsbn(), getSinopse(), getAdmin());
+		return String.format("Título: %s, Autor: %s, ISBN: %s, Sinopse: %s, Criado por: [ADMIN] %s", getTitulo(), getAutor(), getIsbn(), getSinopse(), getAdmin());
 	}
 }

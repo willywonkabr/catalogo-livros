@@ -35,7 +35,6 @@ public class UsuarioLoader implements ApplicationRunner {
 			usuario.setNome(usuarioDados[0]);
 			usuario.setIdade(Integer.valueOf(usuarioDados[1]));
 			usuario.setListaLivrosFavoritos(new ArrayList<Livro>());
-
 			usuarioService.incluir(usuario);
 
 			linha = leituraArquivo.readLine();

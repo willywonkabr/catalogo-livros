@@ -1,19 +1,21 @@
 package br.edu.infnet.catalogolivros.model.service;
 
 import br.edu.infnet.catalogolivros.model.domain.Admin;
+import br.edu.infnet.catalogolivros.model.repositories.AdminRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-
 @Service
 public class AdminService {
-	private final Map<String, Admin> mapa = new HashMap<>();
+	@Autowired
+	private AdminRepository adminRepository;
+
 	public void incluir(Admin admin) {
-		mapa.put(admin.getIp(), admin);
+		adminRepository.save(admin);
 	}
+
 	public Collection<Admin> obterListaAdmins() {
-		return mapa.values();
+		return (Collection<Admin>) adminRepository.findAll();
 	}
 }

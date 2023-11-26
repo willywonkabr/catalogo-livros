@@ -1,2 +1,3 @@
-Kakashi Hatake;27;O Hobbit
+Kakashi Hatake;27;Os caçadores de nuvens
 João Victor;21;O Peregrino
+Willard Wilbur Wonka;40;O Hobbit
