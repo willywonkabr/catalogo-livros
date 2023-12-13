@@ -1,8 +1,6 @@
 package br.edu.infnet.catalogolivros.model.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -12,10 +10,15 @@ public class Admin {
 	@Id
 	private String ip;
 	private String senha;
-	@Transient
+	@OneToMany
+	@JoinColumn(name = "idAdmin")
 	private List<Livro> listaLivrosCriados;
 	final private LocalDateTime DATA_CRICAO;
 	public Admin() {
+		this.DATA_CRICAO = LocalDateTime.now();
+	}
+	public Admin(String ip) {
+		this.ip = ip;
 		this.DATA_CRICAO = LocalDateTime.now();
 	}
 	public Admin(String ip, String senha, List<Livro> listaLivrosCriados) {
@@ -55,5 +58,6 @@ public class Admin {
 	}
 	public String toString() {
 		return String.format("IP: %s, Senha: %s, Admin desde: %s", getIp(), getSenha(), getDataCriacao().format(DateTimeFormatter.ISO_LOCAL_DATE));
+		// , Livro Criados: %s getListaLivrosCriados()
 	}
 }

@@ -1,8 +1,6 @@
 package br.edu.infnet.catalogolivros.model.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -10,9 +8,12 @@ public class Usuario {
 	@Id
 	private String nome;
 	private int idade;
-	@Transient
+	@ManyToMany(mappedBy = "listaUsuariosFavoritaram")
 	private List<Livro> listaLivrosFavoritos;
 	public Usuario() {
+	}
+	public Usuario(String nome) {
+		this.nome = nome;
 	}
 	public Usuario(String nome, int idade, List<Livro> listaLivrosFavoritos) {
 		this.nome = nome;

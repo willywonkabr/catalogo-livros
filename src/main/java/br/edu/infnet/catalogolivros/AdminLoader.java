@@ -30,7 +30,6 @@ public class AdminLoader implements ApplicationRunner {
 			Admin admin = new Admin();
 			admin.setIp(adminDados[0]);
 			admin.setSenha(adminDados[1]);
-			admin.setListaLivrosCriados(new ArrayList<Livro>());
 			adminService.incluir(admin);
 			linha = leituraArquivo.readLine();
 		}

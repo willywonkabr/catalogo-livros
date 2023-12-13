@@ -1,8 +1,7 @@
 package br.edu.infnet.catalogolivros.model.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Livro {
@@ -11,16 +10,24 @@ public class Livro {
 	private String autor;
 	private String isbn;
 	private String sinopse;
-	@Transient
+	@ManyToOne
+	@JoinColumn(name = "idLivro")
 	private Admin admin;
+	@ManyToMany(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+	@JoinColumn(name = "idUsuario")
+	private List<Usuario> listaUsuariosFavoritaram;
 	public Livro() {
 	}
-	public Livro(String titulo, String autor, String isbn, String sinopse, Admin admin) {
+	public Livro(String titulo) {
+		this.titulo = titulo;
+	}
+	public Livro(String titulo, String autor, String isbn, String sinopse, Admin admin, List<Usuario> listaUsuariosFavoritaram) {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.isbn = isbn;
 		this.sinopse = sinopse;
 		this.admin = admin;
+		this.listaUsuariosFavoritaram = listaUsuariosFavoritaram;
 	}
 	public String getTitulo() {
 		return titulo;
@@ -52,7 +59,14 @@ public class Livro {
 	public void setAdmin(Admin admin) {
 		this.admin = admin;
 	}
+	public List<Usuario> getListaUsuariosFavoritaram() {
+		return listaUsuariosFavoritaram;
+	}
+	public void setListaUsuariosFavoritaram(List<Usuario> listaUsuariosFavoritaram) {
+		this.listaUsuariosFavoritaram = listaUsuariosFavoritaram;
+	}
 	public String toString() {
 		return String.format("Título: %s, Autor: %s, ISBN: %s, Sinopse: %s, Criado por: [ADMIN] %s", getTitulo(), getAutor(), getIsbn(), getSinopse(), getAdmin());
+		//, Usuário que favoritaram: %s", getListaUsuariosFavoritaram());
 	}
 }

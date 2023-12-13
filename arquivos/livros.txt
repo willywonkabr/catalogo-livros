@@ -1,3 +1,3 @@
-O Hobbit;J.R.R Tolkien;8578277104;Como a maioria dos hobbits, Bilbo Bolseiro leva uma vida tranquila até o dia em que recebe uma missão do mago Gandalf.;192.168.0.1;senha123
-O Peregrino;John Bunyan;8584840206;Bunyan relata a viagem de Cristão, um peregrino espiritualmente abatido que viaja rumo à Cidade Celestial.;189.156.0.3;adminsenha
-Os caçadores de nuvens;Alex Shearer;8582770529;Caçar nuvens não é para pessoas de coração fraco. Em um mundo onde a água é escassa e águas vivas letais flutuam pelos céus, o inocente Christien sonha com aventuras e perigos.;177.143.0.2;1234admin;
+O Hobbit;J.R.R Tolkien;8578277104;Como a maioria dos hobbits, Bilbo Bolseiro leva uma vida tranquila até o dia em que recebe uma missão do mago Gandalf.;192.168.0.1;Willard Wilbur Wonka
+O Peregrino;John Bunyan;8584840206;Bunyan relata a viagem de Cristão, um peregrino espiritualmente abatido que viaja rumo à Cidade Celestial.;189.156.0.3;João Victor
+Os caçadores de nuvens;Alex Shearer;8582770529;Caçar nuvens não é para pessoas de coração fraco. Em um mundo onde a água é escassa e águas vivas letais flutuam pelos céus, o inocente Christien sonha com aventuras e perigos.;177.143.0.2;Kakashi Hatake

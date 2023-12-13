@@ -16,7 +16,7 @@ public class UsuarioService {
 	public void incluir(Usuario usuario) {
 		usuarioRespository.save(usuario);
 	}
-	public Collection<Usuario> obterListaLivros() {
+	public Collection<Usuario> obterListaUsuarios() {
 		return (Collection<Usuario>) usuarioRespository.findAll();
 	}
 }
