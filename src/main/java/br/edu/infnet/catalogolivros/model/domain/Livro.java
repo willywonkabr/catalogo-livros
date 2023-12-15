@@ -13,10 +13,10 @@ public class Livro {
 	private String isbn;
 	private String sinopse;
 	@OneToOne(cascade = CascadeType.DETACH)
-	@JoinColumn(name = "idAdmin")
+	@JoinColumn(name = "idAdminCriador")
 	private Admin admin;
 	@ManyToMany(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
-	@JoinColumn(name = "idUsuario")
+	@JoinColumn(name = "idUsuarioFavoritou")
 	private List<Usuario> listaUsuariosFavoritaram;
 	public Integer getId() {
 		return id;
