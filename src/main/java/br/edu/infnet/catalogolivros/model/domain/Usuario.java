@@ -39,6 +39,7 @@ public class Usuario {
 		this.listaLivrosFavoritos = listaLivrosFavoritos;
 	}
 	public String toString() {
-		return String.format("Nome: %s, Idade: %d, Livros Favoritos: %s", getNome(), getIdade(), getListaLivrosFavoritos());
+		return String.format("Nome: %s, Idade: %d", getNome(), getIdade());
+		//, Livros Favoritos: %s", getListaLivrosFavoritos());
 	}
 }
