@@ -6,21 +6,19 @@ import java.util.List;
 @Entity
 public class Usuario {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private String nome;
 	private int idade;
 	@ManyToMany(mappedBy = "listaUsuariosFavoritaram")
 	private List<Livro> listaLivrosFavoritos;
-	public Usuario() {
-	}
-	public Usuario(String nome) {
-		this.nome = nome;
-	}
-	public Usuario(String nome, int idade, List<Livro> listaLivrosFavoritos) {
-		this.nome = nome;
-		this.idade = idade;
-		this.listaLivrosFavoritos = listaLivrosFavoritos;
-	}
 	public void mudarTemaPagina() {
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;

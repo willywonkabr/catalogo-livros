@@ -28,8 +28,8 @@ public class AdminLoader implements ApplicationRunner {
 			adminDados = linha.split(";");
 			System.out.println("[LINHA] " + linha);
 			Admin admin = new Admin();
-			admin.setIp(adminDados[0]);
-			admin.setSenha(adminDados[1]);
+			admin.setIp(adminDados[1]);
+			admin.setSenha(adminDados[2]);
 			adminService.incluir(admin);
 			linha = leituraArquivo.readLine();
 		}

@@ -29,15 +29,12 @@ public class LivroLoader implements ApplicationRunner {
 			livroDados = linha.split(";");
 			System.out.println("[LINHA] " + linha);
 			Livro livro = new Livro();
-			livro.setTitulo(livroDados[0]);
-			livro.setAutor(livroDados[1]);
-			livro.setIsbn(livroDados[2]);
-			livro.setSinopse(livroDados[3]);
-			livro.setAdmin(new Admin(livroDados[4]));
-			livro.getAdmin().setListaLivrosCriados(new ArrayList<>());
-			livro.getAdmin().getListaLivrosCriados().add(new Livro(livroDados[0]));
-			livro.setListaUsuariosFavoritaram(new ArrayList<>());
-			livro.getListaUsuariosFavoritaram().add(new Usuario(livroDados[5]));
+			livro.setTitulo(livroDados[1]);
+			livro.setAutor(livroDados[2]);
+			livro.setIsbn(livroDados[3]);
+			livro.setSinopse(livroDados[4]);
+			livro.setAdmin(new Admin(Integer.valueOf(livroDados[5])));
+			livro.setListaUsuariosFavoritaram(new ArrayList<Usuario>());
 			livroService.incluir(livro);
 			linha = leituraArquivo.readLine();
 		}

@@ -3,28 +3,24 @@ package br.edu.infnet.catalogolivros.model.domain;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
-
 @Entity
 public class Admin {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private String ip;
 	private String senha;
-	@OneToMany
-	@JoinColumn(name = "idAdmin")
-	private List<Livro> listaLivrosCriados;
 	final private LocalDateTime DATA_CRICAO;
 	public Admin() {
 		this.DATA_CRICAO = LocalDateTime.now();
 	}
-	public Admin(String ip) {
-		this.ip = ip;
+	public Admin(Integer id) {
+		this.id = id;
 		this.DATA_CRICAO = LocalDateTime.now();
 	}
-	public Admin(String ip, String senha, List<Livro> listaLivrosCriados) {
+	public Admin(String ip, String senha) {
 		this.ip = ip;
 		this.senha = senha;
-		this.listaLivrosCriados = listaLivrosCriados;
 		this.DATA_CRICAO = LocalDateTime.now();
 	}
 	public void criarLivro() {
@@ -34,6 +30,12 @@ public class Admin {
 	public void deletarLivro() {
 	}
 	public void mudarTemaPagina() {
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getIp() {
 		return ip;
@@ -46,12 +48,6 @@ public class Admin {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-	public List<Livro> getListaLivrosCriados() {
-		return listaLivrosCriados;
-	}
-	public void setListaLivrosCriados(List<Livro> listaLivrosCriados) {
-		this.listaLivrosCriados = listaLivrosCriados;
 	}
 	public LocalDateTime getDataCriacao() {
 		return DATA_CRICAO;
