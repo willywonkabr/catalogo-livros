@@ -1,5 +1,6 @@
 package br.edu.infnet.catalogolivros;
 
+import br.edu.infnet.catalogolivros.model.domain.Endereco;
 import br.edu.infnet.catalogolivros.model.domain.Livro;
 import br.edu.infnet.catalogolivros.model.domain.Usuario;
 import br.edu.infnet.catalogolivros.model.service.UsuarioService;
@@ -34,6 +35,7 @@ public class UsuarioLoader implements ApplicationRunner {
 			Livro livro = new Livro();
 			livro.setId(Integer.valueOf(usuarioDados[3]));
 			usuario.getListaLivrosFavoritos().add(livro);
+			usuario.setEndereco(new Endereco(usuarioDados[4]));
 			usuarioService.incluir(usuario);
 			linha = leituraArquivo.readLine();
 		}

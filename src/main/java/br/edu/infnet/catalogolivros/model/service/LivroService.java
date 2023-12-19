@@ -22,4 +22,7 @@ public class LivroService {
 		return (Collection<Livro>) livroRepository.findAll();
 	}
 
+	public void excluir(Integer id) {
+		livroRepository.deleteById(id);
+	}
 }

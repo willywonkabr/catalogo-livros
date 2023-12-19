@@ -12,6 +12,9 @@ public class Usuario {
 	private int idade;
 	@ManyToMany(mappedBy = "listaUsuariosFavoritaram")
 	private List<Livro> listaLivrosFavoritos;
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "idEndereco")
+	private Endereco endereco;
 	public void mudarTemaPagina() {
 	}
 	public Integer getId() {
@@ -37,6 +40,12 @@ public class Usuario {
 	}
 	public void setListaLivrosFavoritos(List<Livro> listaLivrosFavoritos) {
 		this.listaLivrosFavoritos = listaLivrosFavoritos;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco enderecoUsuario) {
+		this.endereco = enderecoUsuario;
 	}
 	public String toString() {
 		return String.format("Nome: %s, Idade: %d", getNome(), getIdade());

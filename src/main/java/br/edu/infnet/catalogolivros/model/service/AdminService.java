@@ -17,4 +17,7 @@ public class AdminService {
 	public Collection<Admin> obterListaAdmins() {
 		return (Collection<Admin>) adminRepository.findAll();
 	}
+	public void excluir(Integer id) {
+		adminRepository.deleteById(id);
+	}
 }
