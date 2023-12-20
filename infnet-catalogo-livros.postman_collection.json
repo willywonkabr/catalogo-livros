@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "3e95cb9e-d257-48dd-b281-a2bc0c961866",
+		"name": "infnet-catalogo-livros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31672673"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/admin/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ip\": \"172.143.0.5\",\r\n    \"senha\": \"senhaadmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/admin/incluir"
+					},
+					"response": []
+				},
+				{
+					"name": "excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/admin/4/excluir"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "livro",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/livro/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\":\"Encarcerados\",\r\n    \"autor\":\"John Scalzi\",\r\n    \"isbn\":\"8576573202\",\r\n    \"sinopse\":\"Um assassinato ocorre em um quarto de hotel em Washington. Junto à vítima está um homem banhado em seu sangue, que alega não ter sido responsável pelo crime.\",\r\n    \"admin\":\r\n    {\r\n        \"id\":1\r\n    },\r\n    \"listaUsuariosFavoritaram\":[]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/livro/incluir"
+					},
+					"response": []
+				},
+				{
+					"name": "excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/livro/4/excluir"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "usuario",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/usuario/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Filemom\",\r\n    \"idade\": 37,\r\n    \"listaLivrosFavoritos\": [],\r\n    \"endereco\": \"20010020\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/usuario/incluir"
+					},
+					"response": []
+				},
+				{
+					"name": "excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/usuario/4/excluir"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
